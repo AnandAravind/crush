@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     <style>
+         #tContainer{
+             width:100%;
+             height:100vh;
+             background-color: black;
+             max-width: 500px;
+             display:flex;
+             flex-direction:column;
+         }
+         #titleContainer{
+             width:100%;
+             height:10vh;
+             background-color:black;
+             display:flex;
+             flex-direction: row;
+             align-items: center;
+             justify-content: center;
+         }
+         #title{
+             font-size: 5vw;
+             text-shadow: 2px 2pX goldenrod;
+             color:red;
+         }
+         #l1{
+            font-size: 5vw;
+            color:gold;
+            text-shadow: 2px 2px rgb(255, 166, 0);
+         }
+         #l2{
+            font-size: 5vw;
+            color:blue;
+            text-shadow: 2px 2px rgb(0, 183, 255);
+         }
+         #cap{
+            color:orangered;
+            font-size: 5vw;
+            text-shadow: 2px 2px rgb(255, 166, 0);
+         }
+         #percent{
+            color:orangered;
+            font-size: 5vw;
+            text-shadow: 2px 2px rgb(255, 166, 0);
+         }
+         @media  screen and (min-width:700px) {
+             #desktopContainer{
+                width:100%;
+                height:100%;
+                background-color:lightslategray;
+                display: flex;                
+                justify-content: center;
+                align-items: center;
+                background-image:url("./sha20.jpg");
+                background-size: 100% 100%;
+            }   
+            #tContainer{
+             width:100%;
+             height:100vh;
+             background-color: black;
+             max-width: 500px;
+             display:flex;
+             flex-direction:column;
+             box-shadow: 5px 10px 10px lightgreen;
+            } 
+            #title{
+             font-size: 2vw;
+             text-shadow: 2px 2pX goldenrod;
+             color:red;
+            }
+            #l1{
+                font-size: 2vw;
+                color:gold;
+                text-shadow: 2px 2px rgb(255, 166, 0);
+            }
+            #l2{
+                font-size: 2vw;
+                color:blue;
+                text-shadow: 2px 2px rgb(0, 183, 255);
+            }
+            #cap{
+                color:orangered;
+                font-size: 2vw;
+                text-shadow: 2px 2px rgb(255, 166, 0);
+            }
+            #percent{
+                color:orangered;
+                font-size: 2vw;
+                text-shadow: 2px 2px rgb(255, 166, 0);
+            }  
+         }
+         #heartContainer{
+             width:100%;
+             height:20vh;
+             background-color:black;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+         }
+         #content{
+             width:100%;
+             height:55vh;
+             background-color:black;
+             display: flex;
+             flex-direction: row;
+         }
+         #yContainer{
+           width:35%;
+           height:100%;
+           background-color: black;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           flex-direction: column;
+         }
+         #pContainer{
+            width:30%;
+            height:100%;
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+         }
+         #cContainer{
+            width:35%;
+            height:100%;
+            background-color:black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+         }
+         
+         #yname{
+             width:80%;
+         }
+         #cname{
+            width:80%;
+         }
+         .i{
+             width:50%;
+             height:30%;
+             padding-top: 20px;
+         }
+         #container{
+            height:60%;
+            width:25%;
+            background-color:orangered;
+            border-width: thin;
+            border-color:gray;
+            border-style: solid;
+         }
+         #progress{
+            width:100%;
+            background-color:black;
+            height:100%;
+            
+         }
+         
+         #h{
+             width:25%;
+             height:80%;
+         }
+         #t{
+             width:10%;
+             height:80%;
+         }
+         
+         #punch{
+             width:25%;
+             height:10%;
+             border-radius: 100%;
+         }
+         .ic{
+            padding-top: 3px;
+            border-width: 1px;
+            border-color:aqua;
+            box-shadow: 1px 1px 1px skyblue;
+            
+         }
+         #caption{
+             width:100%;
+             height:15vh;
+             background-color:black;
+             display:flex;
+             justify-content: center;
+             align-items: center;
+         }
+         
+     </style>
+    </head>
+    <body>
+        <div id="desktopContainer">
+            <div id="tContainer">
+                <div id="titleContainer">
+                   <h1 id="title">QUARANTINE SPECIAL !!! </h1>
+                   <image id="t" src="./h2.jpg"/>
+                </div>
+                <div id="heartContainer">
+                   <image id="h" src="./h3.jpg"/>
+                </div>
+                <div id="content">
+                      <div id="yContainer">
+                        <label for="yname" id="l1">Your Name:</label>
+                        <input type="text" id="yname" name="yname" class="ic"/>
+                        <image class="i" src="./90s.jpg" id="i1"/>
+    
+                      </div>
+                      <div id="pContainer">
+                        <div id="container">
+                            <div id="progress"></div>
+                        </div>
+                        <p id="percent">0%</p>          
+                        <image src="./punch.jpg" id="punch" onclick="move()"/>
+                      </div>
+                      <div id="cContainer">
+                        <label for="cname" id="l2">Crush Name:</label>
+                        <input type="text" id="cname" name="cname" class="ic"/>
+                        <image class="i" src="./2kk.jpg" id="i2"/>
+                      </div>
+                </div>
+                <div id="caption">
+                      <p id="cap"></p>
+                </div>
+    
+            </div>
+        </div>
+    </body>
+    <script>
+        var count=0;
+        var i=0;
+        function move(){
+            if(count == 0){
+                count=count+1;
+                var yName=document.getElementById("yname").value.trim();
+                var cName=document.getElementById("cname").value.trim();
+                var a=change(yName,cName);
+                var f=100-a;
+                if(a != 0){
+                  get(a,f,cName,yName);
+                  remove(yName,cName); 
+                            
+                }
+            }
+            
+        }
+        
+        function remove(yName,cName){
+            var Parent1=document.getElementById("yContainer");
+                var Child1=document.getElementById("yname");
+                var Child2=document.getElementById("l1");
+                var img=document.getElementById("i1");
+                Parent1.removeChild(Child1);
+                Parent1.removeChild(Child2);
+                var CE= document.createElement("p");
+                CE.setAttribute('id',"l1");
+                Parent1.insertBefore(CE,img);
+                document.getElementById("l1").innerHTML=yName;
+                var Parent2=document.getElementById("cContainer");
+                var Child11=document.getElementById("cname");
+                var Child12=document.getElementById("l2"); 
+                var img1=document.getElementById("i2");
+                Parent2.removeChild(Child11);
+                Parent2.removeChild(Child12);  
+                var BE= document.createElement("p");
+                BE.setAttribute('id',"l2");
+                Parent2.insertBefore(BE,img1);
+                document.getElementById("l2").innerHTML=cName; 
+        }
+        function change(a,b){
+            console.log(a);
+            console.log(b)
+            var yName=a;
+            var cName=b;
+            var l1=yName.length;
+            var l2=cName.length;
+            if((l1 ==0) || (l2 ==0)){
+                return 0;
+            }
+            if(l1 == l2){
+                return (100-93);
+            }
+
+            if(l1 > l2){
+                var res=(l2/l1)*100;
+                return (100-res);
+               
+            }
+            if(l2 > l1){
+                var res=(l1/l2)*100;
+                console.log(res*100);
+                return (100-res);
+            }
+
+        }
+        function get(data,f,crush,owner){
+            if(i==0){
+                var ele=document.getElementById("progress");
+                var height=100;
+                var id=setInterval(frame,30);
+                function frame(){
+                    if(height <=data){
+                        clearInterval(id);
+                        i=0;
+                        var b="./h4.jpg";
+                        var c="./h5.jpg";
+                        var d="./h6.jpg";
+                        var e="./h7.jpg";
+                        var cap=document.getElementById("cap"); 
+                        if(f<=25){
+                           document.getElementById("h").src=b;
+                           cap.innerHTML="Try Some Alcohol With Your friend !!";
+                        }
+                        else if(f<=50){
+                           document.getElementById("h").src=e;
+                           cap.innerHTML="This Webpage is not available ??";
+                        }
+                        else if(f<=75){
+                           document.getElementById("h").src=c;
+                           cap.innerHTML="Best Of Luck  "+owner+" !!";
+                        }
+                        else if(f<=100){
+                           document.getElementById("h").src=d;
+                           cap.innerHTML="Jamaai Ice Cream and "+crush+" !!";
+                        }
+                    }
+                    else{
+                        var con=document.getElementById("container");
+                        var per=document.getElementById("percent");
+                        if((100-height)<25)
+                        {
+                          con.style.backgroundColor="yellow";
+                          per.style.color="yellow";
+                        }
+                        else if((100-height)<50)
+                        {
+                          con.style.backgroundColor="blue";
+                          per.style.color="blue";
+                        }
+                        else if((100-height)<75)
+                        {
+                          con.style.backgroundColor="green";
+                          per.style.color="green";
+                        }
+                        else if ((100-height)<100)
+                        {
+                          con.style.backgroundColor="red";
+                          per.style.color="red";
+                        }
+                        height--;
+                        ele.style.height=height+"%";
+                        document.getElementById("percent").innerHTML=100-height+"%"
+                    }
+                }
+
+            }
+        }
+    </script>
+</html>
